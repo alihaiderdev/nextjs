@@ -1,1 +1,16 @@
 Static and Dynamic Routes
+    If you want to make any route then make files or foldes in pages 
+    folder and name should start from small letter other wise it will 
+    not work and give us error page not found and for dynamic route we 
+    make file using square brackets [postId].js i.e: 1,2,3 etc and simililarly for folder
+    [categoryName] i.e: electronics, clothes etc.
+
+
+folder structure for static, dynamic and nested routes.
+    static route
+        home.js ------------------ file access: rootUrl/home
+    nested static routes
+        blog --------------------- folder 
+            add.js --------------- file access: rootUrl/blog/add
+            edit.js -------------- file access: rootUrl/blog/edit
+            index.js ------------- root file when call blog then this file is call  access: rootUrl/blog
