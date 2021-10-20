@@ -75,6 +75,8 @@ Server-side rendering
     getServerSideProps (jesa ka ecommerce website ka product details pages because user har baar differen et products pa click karta hai us product ki description page pa jane ka lia unpredictable hota hai is case ma api hit hoti hai har bari ma)
 
 
+same api ko kuch time ka baad hit karna pa har bar different data mile
+
 
 λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
 ○  (Static)  automatically rendered as static HTML (uses no initial props)
