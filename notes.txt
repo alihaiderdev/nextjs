@@ -5,7 +5,7 @@ Static and Dynamic Routes
     make file using square brackets [postId].js i.e: 1,2,3 etc and simililarly for folder
     [categoryName] i.e: electronics, clothes etc.
 
-
+These all below toics are in old-pages folder
 folder structure for static, dynamic and nested routes.
     static route
         home.js ------------------ file access: rootUrl/home
@@ -36,3 +36,17 @@ folder structure for static, dynamic and nested routes.
             model --------------------- staic folder 
             [model].js -------------- file access: rootUrl/info/infoId here infoId would be dynamic and can be any number. (dynamic route)
             index.js ------------- root file when call info then this file is call  access: rootUrl/info (static route)
+
+
+These 3 toics are in pages folder
+1. link replace.
+2. route push.
+3. shallow routing.
+    shallow routing allows you to change the URL without running data fetching methods again, that includes
+    getServerSideProps, getStaticProps, and getInitailProps.
+    state remain same (home?page=1, home?page=2, home?page=3) means home content will not be change.
+4. Custom 404 page.
+
+getServerSideProps
+getStaticProps
+getInitailProps

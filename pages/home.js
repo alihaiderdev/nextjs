@@ -6,36 +6,35 @@ const Home = () => {
   const router = useRouter();
   const { infoType } = router.query;
   console.log('router : ', router.query);
+  const redirect = () => {
+    router.push('/news');
+  };
   return (
     <div className='home'>
       <h1>This is home page</h1>
-      {/* <Link href='/'>
-        <a>Index Page</a>
-      </Link> */}
-      {/* OR  */}
       <div>
-        <Link href='/'>Index</Link>
+        <button>
+          <Link href='/'>Index</Link>
+        </button>
       </div>
       <div>
-        <Link href='/blog'>Blog</Link>
+        <button>
+          <Link href='/blog'>Blog</Link>
+        </button>
       </div>
       <div>
-        <Link href='/article'>Article</Link>
+        <button>
+          <Link href='/about' replace>
+            About
+          </Link>
+        </button>
       </div>
       <div>
-        <Link href='/brand'>Brand</Link>
-      </div>
-      <div>
-        <Link href='/info'>Info</Link>
-      </div>
-      <div>
-        <Link href='/info/bus'>Info vehicle</Link>
-      </div>
-      <div>
-        <Link href='/info/bus/honda'>Vehicle company name</Link>
-      </div>
-      <div>
-        <Link href='/info/bus/honda/2010'>Vehicle model number</Link>
+        {/* <button onClick={() => router.push('/news')}>News</button> */}
+        <button onClick={redirect}>News</button>
+        <button onClick={() => router.push('/home?page=1', undefined, { shallow: true })}>Home 1</button>
+        <button onClick={() => router.push('/home?page=2', undefined, { shallow: true })}>Home 2</button>
+        <button onClick={() => router.push('/home?page=3', '/about', { shallow: true })}>Home 3</button>
       </div>
     </div>
   );
