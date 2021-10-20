@@ -8,6 +8,7 @@
 
 // export default Blog;
 import styles from '../styles/Home.module.css';
+import Head from 'next/head';
 
 // Generates a random number within user indicated interval
 // const getRandom = async ({ min, max, base }) => {
@@ -44,6 +45,10 @@ const Comments = ({ comments }) => {
   console.log({ comments });
   return (
     <div>
+      <Head>
+        <title>Comments page</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      </Head>
       <h1>All Comments: </h1>
       <div className={styles.grid}>
         {comments &&

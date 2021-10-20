@@ -1,9 +1,21 @@
 import { useRouter } from 'next/router';
 import styles from '../../styles/Home.module.css';
+import Head from 'next/head';
 
 export async function getStaticPaths() {
   // defining paths for all the pages that we want to make bundle
-  const paths = ['/blog/1', '/blog/2', '/blog/3', '/blog/4', '/blog/5', '/blog/6', '/blog/7', '/blog/8', '/blog/9', '/blog/10'];
+  const paths = [
+    '/blog/1',
+    '/blog/2',
+    '/blog/3',
+    '/blog/4',
+    '/blog/5',
+    '/blog/6',
+    '/blog/7',
+    '/blog/8',
+    '/blog/9',
+    '/blog/10',
+  ];
 
   // fallback: true || false || 'blocking';
   // fallback: true  sa ya hoga ka paths ka ander jo jo paths define hain unhain to bundle kar ka pehla hi rakh lega or call karna pa dekha dega and jesa ka hamare case ma 10 blogs starting ka baki agar user 10 ka baad kisi bhi blog pa jaega to usa pehla loader dikhaega and paths wale blogs ka ilawa agar kisi bhi blog pa jaega to first time to client side pa ja kar render karwaega and first time pa hi iski build bhi bana dega and jab user again is page pa aega to usa jo build bani hogi wahan sa dekhaega matlab is baar wale sa aega but agar hum fallback ko false kar dainga to paths wale to dekha dega pages but uska ilawa wale pages pa 404 de dega
@@ -44,6 +56,10 @@ const Blog = ({ blog }) => {
   }
   return (
     <>
+      <Head>
+        <title>{blog.title}</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      </Head>
       <button onClick={() => router.back()}>Back</button>
       <div className={styles.grid}>
         <span className={styles.card}>

@@ -10,6 +10,7 @@
 import { useRouter } from 'next/router';
 import styles from '../../styles/Home.module.css';
 import Link from 'next/link';
+import Head from 'next/head';
 
 export async function getStaticProps(context) {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -23,6 +24,10 @@ const Blog = ({ blogs, name, age, gender }) => {
 
   return (
     <div>
+      <Head>
+        <title>Blogs page</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      </Head>
       <h1>Latest Blogs: </h1>
       <div className={styles.grid}>
         {blogs &&
@@ -41,7 +46,24 @@ const Blog = ({ blogs, name, age, gender }) => {
                   <h3 style={{ margin: '0px' }}>{item.title}</h3>
                   <p>{item.body}</p>
                 </a> */}
-                <Link href={{ pathname: '/blog/[blogId]', query: { blogId: item.id } }} key={item.id} className={styles.card}>
+                {/* OR  */}
+                {/* <Link
+                  href={{ pathname: '/blog/[blogId]', query: { blogId: item.id } }}
+                  key={item.id}
+                  className={styles.card}
+                >
+                  <a className={styles.card}>
+                    <h2>Blog # {item.id} &rarr;</h2>
+                    <h3 style={{ margin: '0px' }}>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </a>
+                </Link> */}
+                {/* OR  */}
+                <Link
+                  href={`/blog/${encodeURIComponent(item.id)}`}
+                  key={item.id}
+                  className={styles.card}
+                >
                   <a className={styles.card}>
                     <h2>Blog # {item.id} &rarr;</h2>
                     <h3 style={{ margin: '0px' }}>{item.title}</h3>
