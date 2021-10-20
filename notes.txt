@@ -95,3 +95,13 @@ Error
      } , correct
     });
     exporting an arrow function directly does not give the component a displayName
+
+
+
+API's creation in next app 
+
+dynamic apis
+
+/post?id=1&name="ali"
+/post/2
+/info/bike/yamaha150/2010
