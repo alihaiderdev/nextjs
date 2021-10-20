@@ -29,17 +29,26 @@ const Blog = ({ blogs, name, age, gender }) => {
           blogs.length > 0 &&
           blogs.map((item, id) => {
             return (
-              <a
-                // href=''
-                style={{ cursor: 'pointer' }}
-                onClick={() => router.push({ pathname: '/blog/[blogId]', query: { blogId: item.id } })}
-                key={item.id}
-                className={styles.card}
-              >
-                <h2>Blog # {item.id} &rarr;</h2>
-                <h3 style={{ margin: '0px' }}>{item.title}</h3>
-                <p>{item.body}</p>
-              </a>
+              <>
+                {/* <a
+                  // href=''
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => router.push({ pathname: '/blog/[blogId]', query: { blogId: item.id } })}
+                  key={item.id}
+                  className={styles.card}
+                >
+                  <h2>Blog # {item.id} &rarr;</h2>
+                  <h3 style={{ margin: '0px' }}>{item.title}</h3>
+                  <p>{item.body}</p>
+                </a> */}
+                <Link href={{ pathname: '/blog/[blogId]', query: { blogId: item.id } }} key={item.id} className={styles.card}>
+                  <a className={styles.card}>
+                    <h2>Blog # {item.id} &rarr;</h2>
+                    <h3 style={{ margin: '0px' }}>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </a>
+                </Link>
+              </>
             );
           })}
       </div>
@@ -48,9 +57,3 @@ const Blog = ({ blogs, name, age, gender }) => {
 };
 
 export default Blog;
-
-// <Link href='/blog/[blogId]' as={`/blog/${item.id}`} key={item.id} className={styles.card}>
-// <h2>Blog # {item.id} &rarr;</h2>
-// <h3 style={{ margin: '0px' }}>{item.title}</h3>
-// <p>{item.body}</p>
-// </Link>

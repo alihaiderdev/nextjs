@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { forwardRef, useEffect } from 'react';
 
 // here it is not necessary that file and folder name must be same it would be different
 const Home = () => {
@@ -16,6 +16,15 @@ const Home = () => {
   const redirect = () => {
     router.push('/news');
   };
+
+  const Button = forwardRef(function fr({ onClick, href }, ref) {
+    console.log('ref : ', href);
+    return (
+      <a href={href} onClick={onClick} ref={ref}>
+        Yes Click
+      </a>
+    );
+  });
   return (
     <div className='home'>
       <h1>This is home page</h1>
@@ -39,6 +48,25 @@ const Home = () => {
           </Link>
         </button>
       </div>
+      <div>
+        <Link href={{ pathname: '/about', query: { name: 'ali', age: 23, gender: 'male', employeeAtAnyCompany: true } }}>
+          <a>
+            <button>About query</button>
+          </a>
+        </Link>
+      </div>
+
+      {/* we use passHref to passing link href value to its direct child if its direct child is a tag then we dont use it by deauld its paas to it  */}
+      <div>
+        <Link passHref href={{ pathname: '/about', query: { name: 'ali', age: 23, gender: 'male', employeeAtAnyCompany: true } }}>
+          <button>About query using passRef</button>
+        </Link>
+      </div>
+
+      {/* use of passHref  */}
+      <Link passHref href={{ pathname: '/about', query: { name: 'ali', age: 23, gender: 'male', employeeAtAnyCompany: true } }}>
+        <Button />
+      </Link>
       <div>
         {/* <button onClick={() => router.push('/news')}>News</button> */}
         <button onClick={redirect}>News</button>
