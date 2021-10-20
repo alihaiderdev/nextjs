@@ -50,3 +50,13 @@ These 3 toics are in pages folder
 getServerSideProps
 getStaticProps
 getInitailProps
+
+
+styling
+    /* we can not use pure selectors or builtin elements of html (div, a, h1, span etc) if you want then go to their css in global.css file  */
+    /* this will cause an error  */
+    /* div {
+    background-color: aqua;
+    } */
+
+
