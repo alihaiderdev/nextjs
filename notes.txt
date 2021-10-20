@@ -82,3 +82,16 @@ same api ko kuch time ka baad hit karna pa har bar different data mile
 ○  (Static)  automatically rendered as static HTML (uses no initial props)
 ●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
    (ISR)     incremental static regeneration (uses revalidate in getStaticProps)
+
+
+Error
+    component difinition is missing display name react/display-name 
+    the above error sometimes raise due to use of arrow function (loading: () => <h2>Loading ............</h2>) and to resolve this error simply make normal function instead of arrow function
+    const Sidebar = dynamic(() => import('../components/Sidebar').then((module) => module.Sidebar), {
+    ssr: false,
+    loading: () => <h2>Loading ............</h2>, wrong
+     loading: function loading (){
+         return <h2>Loading ............</h2>
+     } , correct
+    });
+    exporting an arrow function directly does not give the component a displayName
