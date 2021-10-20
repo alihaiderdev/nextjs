@@ -1,5 +1,4 @@
 import { useRouter } from 'next/dist/client/router';
-import React from 'react';
 
 const ArticleId = () => {
   const router = useRouter();

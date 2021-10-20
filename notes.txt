@@ -26,3 +26,13 @@ folder structure for static, dynamic and nested routes.
             model --------------------- staic folder 
             [model].js -------------- file access: rootUrl/brand/brandId here brandId would be dynamic and can be any number. (dynamic route)
             index.js ------------- root file when call brand then this file is call  access: rootUrl/brand (static route)
+       
+        rootUrl/info/car
+        rootUrl/info/car/honda
+        rootUrl/info/car/honda/2010
+        for these above 3 routes we can make route like this [...name].js here name would be anything in our case infoType i.e: (/info/car, /info/car/honda, /info/car/honda/2010) 
+        info --------------------- folder 
+            [infoName] --------------- dynamic folder 
+            model --------------------- staic folder 
+            [model].js -------------- file access: rootUrl/info/infoId here infoId would be dynamic and can be any number. (dynamic route)
+            index.js ------------- root file when call info then this file is call  access: rootUrl/info (static route)

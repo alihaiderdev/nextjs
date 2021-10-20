@@ -1,5 +1,3 @@
-import React from 'react';
-
 const add = () => {
   return <div>This is blog add page.</div>;
 };
