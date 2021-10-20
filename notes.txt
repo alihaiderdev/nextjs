@@ -14,3 +14,15 @@ folder structure for static, dynamic and nested routes.
             add.js --------------- file access: rootUrl/blog/add
             edit.js -------------- file access: rootUrl/blog/edit
             index.js ------------- root file when call blog then this file is call  access: rootUrl/blog
+    dynamic routes
+        article --------------------- folder 
+            policy.js --------------- file access: rootUrl/article/policy (static route)
+            [articleId].js -------------- file access: rootUrl/article/articleId here articleId would be dynamic and can be any number. (dynamic route)
+            index.js ------------- root file when call article then this file is call  access: rootUrl/article (static route)
+
+        rootUrl/brand/honda/model/2010
+        brand --------------------- folder 
+            [brandName] --------------- dynamic folder 
+            model --------------------- staic folder 
+            [model].js -------------- file access: rootUrl/brand/brandId here brandId would be dynamic and can be any number. (dynamic route)
+            index.js ------------- root file when call brand then this file is call  access: rootUrl/brand (static route)
