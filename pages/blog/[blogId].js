@@ -38,13 +38,16 @@ const Blog = ({ blog }) => {
     return <div>Loading page data ...</div>;
   }
   return (
-    <div className={styles.grid}>
-      <span className={styles.card}>
-        <h2>Blog {blog.id} &rarr;</h2>
-        <h3 style={{ margin: '0px' }}>{blog.title}</h3>
-        <p>{blog.body}</p>
-      </span>
-    </div>
+    <>
+      <button onClick={() => router.back()}>Back</button>
+      <div className={styles.grid}>
+        <span className={styles.card}>
+          <h2>Blog {blog.id} &rarr;</h2>
+          <h3 style={{ margin: '0px' }}>{blog.title}</h3>
+          <p>{blog.body}</p>
+        </span>
+      </div>
+    </>
   );
 };
 

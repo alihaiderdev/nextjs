@@ -7,7 +7,9 @@
 // };
 
 // export default Blog;
+import { useRouter } from 'next/router';
 import styles from '../../styles/Home.module.css';
+import Link from 'next/link';
 
 export async function getStaticProps(context) {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -17,6 +19,8 @@ export async function getStaticProps(context) {
   };
 }
 const Blog = ({ blogs, name, age, gender }) => {
+  const router = useRouter();
+
   return (
     <div>
       <h1>Latest Blogs: </h1>
@@ -25,11 +29,17 @@ const Blog = ({ blogs, name, age, gender }) => {
           blogs.length > 0 &&
           blogs.map((item, id) => {
             return (
-              <span key={item.id} className={styles.card}>
+              <a
+                // href=''
+                style={{ cursor: 'pointer' }}
+                onClick={() => router.push({ pathname: '/blog/[blogId]', query: { blogId: item.id } })}
+                key={item.id}
+                className={styles.card}
+              >
                 <h2>Blog # {item.id} &rarr;</h2>
                 <h3 style={{ margin: '0px' }}>{item.title}</h3>
                 <p>{item.body}</p>
-              </span>
+              </a>
             );
           })}
       </div>
@@ -38,3 +48,9 @@ const Blog = ({ blogs, name, age, gender }) => {
 };
 
 export default Blog;
+
+// <Link href='/blog/[blogId]' as={`/blog/${item.id}`} key={item.id} className={styles.card}>
+// <h2>Blog # {item.id} &rarr;</h2>
+// <h3 style={{ margin: '0px' }}>{item.title}</h3>
+// <p>{item.body}</p>
+// </Link>
