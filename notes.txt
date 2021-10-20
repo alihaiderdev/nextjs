@@ -60,3 +60,23 @@ styling
     } */
 
 
+Pre rendering
+    1. Static generation (preference)
+    2. Server-side rendering
+
+Static generation
+    getStaticProps
+    getStaticPath
+    1. with data (fetching data from server or calling api and get data from it and the all data set inot a single file and then send to client from server)
+
+    2. without data (like in our case our about, home and news pages that having no kind of api calling and dynamic data fetching)
+
+Server-side rendering
+    getServerSideProps (jesa ka ecommerce website ka product details pages because user har baar differen et products pa click karta hai us product ki description page pa jane ka lia unpredictable hota hai is case ma api hit hoti hai har bari ma)
+
+
+
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
+   (ISR)     incremental static regeneration (uses revalidate in getStaticProps)
