@@ -32,10 +32,10 @@ const Home = () => {
         <Link href='/info/bus'>Info vehicle</Link>
       </div>
       <div>
-        <Link href='/info/bus/honda'>Info vehicle name</Link>
+        <Link href='/info/bus/honda'>Vehicle company name</Link>
       </div>
       <div>
-        <Link href='/info/bus/honda/2010'>Info vehicle model</Link>
+        <Link href='/info/bus/honda/2010'>Vehicle model number</Link>
       </div>
     </div>
   );
